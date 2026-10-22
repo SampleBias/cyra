@@ -101,7 +101,7 @@ fn metadata(meta: &Meta<'_>) -> String {
   "accession":{{"required":{required},"value":null,"note":"{note}"}},
   "licenses":[
     {{"domain":"dataset","rights_basis":"{rights}","intended_use":"{intended}","spdx":null,"note":"Dataset rights are distinct from code and model weights. These rows are a pipeline fixture, not an approved biological cohort."}},
-    {{"domain":"code","rights_basis":"unknown","intended_use":"not_applicable","spdx":null,"note":"Repository license is undecided and is distinct from the dataset license."}},
+    {{"domain":"code","rights_basis":"unknown","intended_use":"not_applicable","spdx":null,"note":"This fixture records unknown code rights. It is distinct from the dataset license and from the MIT license of the Cyra source."}},
     {{"domain":"model_weight","rights_basis":"unknown","intended_use":"not_applicable","spdx":null,"note":"No model weights belong to this dataset."}}
   ],
   "sources":[{{"source_id":"src-fixture","kind":"synthetic_table","uri":null,"version":"1","content_role":"measurements","checksum_sha256":{checksum}}}],

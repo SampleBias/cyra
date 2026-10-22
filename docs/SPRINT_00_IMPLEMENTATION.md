@@ -44,7 +44,7 @@ Foundation budgets: 1 MiB line, depth 64, 4096 container items/session requests,
 
 ## Limitations and handover
 
-Source distribution license is not selected, so packages remain private/nonpublishable. Only the Unix reference path is supported for filesystem security. Abrupt termination can leave unpublished staging files; complete artifacts are never exposed before publication. Owners can modify files outside the API, so verified reads detect corruption.
+Original source is released under the MIT license. Workspace packages remain `publish = false` and are not published to crates.io. Only the Unix reference path is supported for filesystem security. Abrupt termination can leave unpublished staging files; complete artifacts are never exposed before publication. Owners can modify files outside the API, so verified reads detect corruption.
 
 Dependency audit checks licenses/native-build policy and is not a vulnerability advisory scan. Reserved scientific-query schemas will need explicit units, time and full provenance extensions in their later implementation sprints. JSONL sessions are bounded and synchronous; per-simulation quotas are future work. Scientific runtime has no network implementation.
 

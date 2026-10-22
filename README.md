@@ -38,7 +38,7 @@ Supporting contracts:
 
 ## Planning authority
 
-This backlog translates the original VMSC directive supplied on 2026-10-22 and the subsequent rename to Cyra. No separate accompanying specification or sprint files were present. Reconcile any later supplied authoritative documents explicitly before changing scope. No public distribution license has been selected; workspace packages remain nonpublishable pending the owner's release-license decision.
+This backlog translates the original VMSC directive supplied on 2026-10-22 and the subsequent rename to Cyra. No separate accompanying specification or sprint files were present. Reconcile any later supplied authoritative documents explicitly before changing scope. Original source is released under the MIT license. Workspace packages remain `publish = false` and are not published to crates.io. Third-party dependencies, datasets, and model weights keep their own licenses.
 
 The directive takes precedence over these documents. The specification defines shared contracts; sprint files define executable work and evidence for those contracts. Changes require an architecture decision record and updates to affected tests and sprint items. Writing a plan or passing a synthetic test does not constitute scientific validation.
 

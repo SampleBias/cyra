@@ -34,4 +34,4 @@ Storage: the Sprint 01 decision is [ADR 0003](0003-storage-profiles.md). It pins
 
 Scientific core has no AI dependency. Later commands return discoverable unsupported statuses. Descriptor-relative file operations narrow current platform support until equivalent implementations are tested. `xtask audit` is a dependency policy check, not a security-advisory scan.
 
-Source distribution licensing remains undecided. Packages use `publish=false`; LICENSE records that no new license grant is being invented. Local development is authorized by the user.
+Original source is MIT, as recorded in `LICENSE`. Third-party dependencies keep their own licenses. Packages use `publish=false` and are not published to crates.io.

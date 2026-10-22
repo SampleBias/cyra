@@ -40,4 +40,4 @@ Fixtures are synthetic. A test that sets `origin` to `experimental` with public-
 
 Import covers explicit tabular mappings, not every omics container. Population measurements are not copied onto cells. Missing donors are not repaired. The acquisition gap blocks an independent biological benchmark that needs paired transcript, secreted protein and functional assays. Repository pages were reviewed on 2026-10-22; raw matrices were not downloaded, so donor counts that a page did not state stay null, and counts that a page did state were not re-derived from the files.
 
-Sign-off boxes in the sprint file stay unchecked. No reviewer identity was invented. Source distribution licensing remains undecided. Sprint 02, ontology and profile bundles, is the next engineering package and is not started.
+Sign-off boxes in the sprint file stay unchecked. No reviewer identity was invented. Original source is MIT; that license does not cover datasets or model weights. Sprint 02, ontology and profile bundles, is the next engineering package and is not started.

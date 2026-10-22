@@ -3,7 +3,7 @@ name = "cyra-core"
 version.workspace = true
 edition.workspace = true
 rust-version.workspace = true
-license-file = "../../LICENSE"
+license.workspace = true
 publish.workspace = true
 description = "Typed scientific and reproducibility foundation for Cyra"
 

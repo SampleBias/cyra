@@ -29,7 +29,7 @@ A graph amendment proposal contains the base revision, added/removed edges, equa
 
 Retain original sources and checksums; keep normalized and derived artifacts separate. Record accessions including dataset version, donor pseudonyms, batch, passage, assay conditions and exact transformations. Unknown donor identity prevents claims of donor-independent evaluation. Unknown or incompatible data rights place the dataset in a quarantined, evaluation-ineligible state until resolved; do not assume public accessibility grants reuse rights.
 
-Dataset permissions, software licenses and model-weight licenses are separate records. No raw donor identifiers or credentials belong in committed fixtures, logs or published reports. Remote AI transmission is opt-in and uses a minimized, recorded payload.
+The original Cyra source is licensed under MIT. That license does not cover datasets, model weights, or third-party dependencies. Dataset permissions, software licenses and model-weight licenses are separate records. No raw donor identifiers or credentials belong in committed fixtures, logs or published reports. Remote AI transmission is opt-in and uses a minimized, recorded payload.
 
 ## Scientific claim rules
 
