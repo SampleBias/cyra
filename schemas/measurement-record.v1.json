@@ -1,0 +1,184 @@
+{
+  "$defs": {
+    "Compartment": {
+      "enum": [
+        "intracellular",
+        "extracellular",
+        "membrane",
+        "not_applicable"
+      ],
+      "type": "string"
+    },
+    "LineageRef": {
+      "additionalProperties": false,
+      "properties": {
+        "input_sha256": {
+          "type": "string"
+        },
+        "sample_id": {
+          "type": "string"
+        },
+        "source_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "sample_id",
+        "source_id",
+        "input_sha256"
+      ],
+      "type": "object"
+    },
+    "MissingReason": {
+      "enum": [
+        "not_measured",
+        "below_detection",
+        "failed_qc",
+        "not_applicable",
+        "unknown"
+      ],
+      "type": "string"
+    },
+    "Modality": {
+      "enum": [
+        "transcript",
+        "intracellular_protein",
+        "secreted_protein",
+        "metabolite",
+        "functional_assay"
+      ],
+      "type": "string"
+    },
+    "QuantityKind": {
+      "enum": [
+        "count",
+        "relative_expression",
+        "abundance",
+        "activity",
+        "concentration",
+        "amount",
+        "specific_amount",
+        "flux",
+        "functional_readout"
+      ],
+      "type": "string"
+    },
+    "TimeUnit": {
+      "enum": [
+        "second",
+        "minute",
+        "hour",
+        "day"
+      ],
+      "type": "string"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "analyte_id": {
+      "type": "string"
+    },
+    "assay_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "censor_limit": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "compartment": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Compartment"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "lineage": {
+      "$ref": "#/$defs/LineageRef"
+    },
+    "missing_reason": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/MissingReason"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "modality": {
+      "$ref": "#/$defs/Modality"
+    },
+    "protocol_version": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "qc_failure": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "quantity_kind": {
+      "$ref": "#/$defs/QuantityKind"
+    },
+    "record_id": {
+      "type": "string"
+    },
+    "sample_id": {
+      "type": "string"
+    },
+    "time_amount": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "time_origin": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "time_unit": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/TimeUnit"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "unit": {
+      "type": "string"
+    },
+    "value": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "required": [
+    "record_id",
+    "sample_id",
+    "analyte_id",
+    "modality",
+    "unit",
+    "quantity_kind",
+    "lineage"
+  ],
+  "title": "MeasurementRecord",
+  "type": "object"
+}

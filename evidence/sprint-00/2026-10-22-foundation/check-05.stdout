@@ -1,0 +1,226 @@
+cyra-core v0.1.0 (/home/s4mpl3bi4s/cyra/crates/cyra-core)
+├── rustix feature "default"
+│   ├── rustix v1.1.4
+│   │   ├── bitflags v2.13.2
+│   │   ├── linux-raw-sys feature "auxvec"
+│   │   │   └── linux-raw-sys v0.12.1
+│   │   ├── linux-raw-sys feature "elf"
+│   │   │   └── linux-raw-sys v0.12.1
+│   │   ├── linux-raw-sys feature "errno"
+│   │   │   └── linux-raw-sys v0.12.1
+│   │   ├── linux-raw-sys feature "general"
+│   │   │   └── linux-raw-sys v0.12.1
+│   │   ├── linux-raw-sys feature "ioctl"
+│   │   │   └── linux-raw-sys v0.12.1
+│   │   └── linux-raw-sys feature "no_std"
+│   │       └── linux-raw-sys v0.12.1
+│   └── rustix feature "std"
+│       ├── rustix v1.1.4 (*)
+│       ├── rustix feature "alloc"
+│       │   └── rustix v1.1.4 (*)
+│       └── bitflags feature "std"
+│           └── bitflags v2.13.2
+├── rustix feature "fs"
+│   └── rustix v1.1.4 (*)
+├── schemars feature "default"
+│   ├── schemars v1.2.2
+│   │   ├── dyn-clone feature "default"
+│   │   │   └── dyn-clone v1.0.20
+│   │   ├── ref-cast feature "default"
+│   │   │   └── ref-cast v1.0.27
+│   │   │       └── ref-cast-impl feature "default"
+│   │   │           └── ref-cast-impl v1.0.27 (proc-macro)
+│   │   │               ├── proc-macro2 feature "default"
+│   │   │               │   ├── proc-macro2 v1.0.107
+│   │   │               │   │   └── unicode-ident feature "default"
+│   │   │               │   │       └── unicode-ident v1.0.24
+│   │   │               │   └── proc-macro2 feature "proc-macro"
+│   │   │               │       └── proc-macro2 v1.0.107 (*)
+│   │   │               ├── quote feature "default"
+│   │   │               │   ├── quote v1.0.47
+│   │   │               │   │   └── proc-macro2 v1.0.107 (*)
+│   │   │               │   └── quote feature "proc-macro"
+│   │   │               │       ├── quote v1.0.47 (*)
+│   │   │               │       └── proc-macro2 feature "proc-macro" (*)
+│   │   │               └── syn feature "default"
+│   │   │                   ├── syn v3.0.5
+│   │   │                   │   ├── proc-macro2 v1.0.107 (*)
+│   │   │                   │   ├── quote v1.0.47 (*)
+│   │   │                   │   └── unicode-ident feature "default" (*)
+│   │   │                   ├── syn feature "clone-impls"
+│   │   │                   │   └── syn v3.0.5 (*)
+│   │   │                   ├── syn feature "derive"
+│   │   │                   │   └── syn v3.0.5 (*)
+│   │   │                   ├── syn feature "parsing"
+│   │   │                   │   └── syn v3.0.5 (*)
+│   │   │                   ├── syn feature "printing"
+│   │   │                   │   └── syn v3.0.5 (*)
+│   │   │                   └── syn feature "proc-macro"
+│   │   │                       ├── syn v3.0.5 (*)
+│   │   │                       ├── proc-macro2 feature "proc-macro" (*)
+│   │   │                       └── quote feature "proc-macro" (*)
+│   │   ├── schemars_derive feature "default"
+│   │   │   └── schemars_derive v1.2.2 (proc-macro)
+│   │   │       ├── proc-macro2 feature "default" (*)
+│   │   │       ├── quote feature "default" (*)
+│   │   │       ├── syn feature "default" (*)
+│   │   │       └── serde_derive_internals feature "default"
+│   │   │           └── serde_derive_internals v0.30.0
+│   │   │               ├── proc-macro2 v1.0.107 (*)
+│   │   │               ├── quote v1.0.47 (*)
+│   │   │               ├── syn feature "clone-impls" (*)
+│   │   │               ├── syn feature "derive" (*)
+│   │   │               ├── syn feature "parsing" (*)
+│   │   │               └── syn feature "printing" (*)
+│   │   ├── serde feature "alloc"
+│   │   │   ├── serde v1.0.229
+│   │   │   │   ├── serde_core feature "result"
+│   │   │   │   │   └── serde_core v1.0.229
+│   │   │   │   └── serde_derive feature "default"
+│   │   │   │       └── serde_derive v1.0.229 (proc-macro)
+│   │   │   │           ├── proc-macro2 feature "proc-macro" (*)
+│   │   │   │           ├── quote feature "proc-macro" (*)
+│   │   │   │           ├── syn feature "clone-impls" (*)
+│   │   │   │           ├── syn feature "derive" (*)
+│   │   │   │           ├── syn feature "parsing" (*)
+│   │   │   │           ├── syn feature "printing" (*)
+│   │   │   │           └── syn feature "proc-macro" (*)
+│   │   │   └── serde_core feature "alloc"
+│   │   │       └── serde_core v1.0.229
+│   │   └── serde_json feature "alloc"
+│   │       ├── serde_json v1.0.151
+│   │       │   ├── memchr v2.8.3
+│   │       │   ├── serde_core v1.0.229
+│   │       │   ├── itoa feature "default"
+│   │       │   │   └── itoa v1.0.18
+│   │       │   └── zmij feature "default"
+│   │       │       └── zmij v1.0.23
+│   │       └── serde_core feature "alloc" (*)
+│   ├── schemars feature "derive"
+│   │   ├── schemars v1.2.2 (*)
+│   │   └── schemars feature "schemars_derive"
+│   │       └── schemars v1.2.2 (*)
+│   └── schemars feature "std"
+│       └── schemars v1.2.2 (*)
+├── serde feature "default"
+│   ├── serde v1.0.229 (*)
+│   └── serde feature "std"
+│       ├── serde v1.0.229 (*)
+│       └── serde_core feature "std"
+│           └── serde_core v1.0.229
+├── serde feature "derive"
+│   ├── serde v1.0.229 (*)
+│   └── serde feature "serde_derive"
+│       └── serde v1.0.229 (*)
+├── serde_json feature "default"
+│   ├── serde_json v1.0.151 (*)
+│   └── serde_json feature "std"
+│       ├── serde_json v1.0.151 (*)
+│       ├── serde_core feature "std" (*)
+│       └── memchr feature "std"
+│           ├── memchr v2.8.3
+│           └── memchr feature "alloc"
+│               └── memchr v2.8.3
+├── sha2 feature "default"
+│   ├── sha2 v0.10.9
+│   │   ├── cfg-if feature "default"
+│   │   │   └── cfg-if v1.0.5
+│   │   ├── cpufeatures feature "default"
+│   │   │   └── cpufeatures v0.2.17
+│   │   └── digest feature "default"
+│   │       ├── digest v0.10.7
+│   │       │   ├── block-buffer feature "default"
+│   │       │   │   └── block-buffer v0.10.4
+│   │       │   │       └── generic-array feature "default"
+│   │       │   │           └── generic-array v0.14.7
+│   │       │   │               └── typenum feature "default"
+│   │       │   │                   └── typenum v1.20.1
+│   │       │   │               [build-dependencies]
+│   │       │   │               └── version_check feature "default"
+│   │       │   │                   └── version_check v0.9.5
+│   │       │   └── crypto-common feature "default"
+│   │       │       └── crypto-common v0.1.7
+│   │       │           ├── generic-array feature "default" (*)
+│   │       │           ├── generic-array feature "more_lengths"
+│   │       │           │   └── generic-array v0.14.7 (*)
+│   │       │           └── typenum feature "default" (*)
+│   │       └── digest feature "core-api"
+│   │           ├── digest v0.10.7 (*)
+│   │           └── digest feature "block-buffer"
+│   │               └── digest v0.10.7 (*)
+│   └── sha2 feature "std"
+│       ├── sha2 v0.10.9 (*)
+│       └── digest feature "std"
+│           ├── digest v0.10.7 (*)
+│           ├── digest feature "alloc"
+│           │   └── digest v0.10.7 (*)
+│           └── crypto-common feature "std"
+│               └── crypto-common v0.1.7 (*)
+└── sha2 feature "force-soft"
+    └── sha2 v0.10.9 (*)
+[dev-dependencies]
+└── tempfile feature "default"
+    ├── tempfile v3.27.0
+    │   ├── getrandom v0.4.3
+    │   │   ├── libc v0.2.189
+    │   │   └── cfg-if feature "default" (*)
+    │   ├── rustix feature "default" (*)
+    │   ├── rustix feature "fs" (*)
+    │   ├── fastrand feature "default"
+    │   │   ├── fastrand v2.5.0
+    │   │   └── fastrand feature "std"
+    │   │       ├── fastrand v2.5.0
+    │   │       └── fastrand feature "alloc"
+    │   │           └── fastrand v2.5.0
+    │   └── once_cell feature "std"
+    │       ├── once_cell v1.21.4
+    │       └── once_cell feature "alloc"
+    │           ├── once_cell v1.21.4
+    │           └── once_cell feature "race"
+    │               └── once_cell v1.21.4
+    └── tempfile feature "getrandom"
+        └── tempfile v3.27.0 (*)
+
+vmcell v0.1.0 (/home/s4mpl3bi4s/cyra/crates/vmcell)
+├── cyra-core feature "default" (command-line)
+│   └── cyra-core v0.1.0 (/home/s4mpl3bi4s/cyra/crates/cyra-core) (*)
+├── serde_json feature "default" (*)
+├── clap feature "derive"
+│   └── clap v4.6.7
+│       ├── clap_builder v4.6.7
+│       │   ├── anstyle feature "default"
+│       │   │   ├── anstyle v1.0.14
+│       │   │   └── anstyle feature "std"
+│       │   │       └── anstyle v1.0.14
+│       │   └── clap_lex feature "default"
+│       │       └── clap_lex v1.1.1
+│       └── clap_derive feature "default"
+│           └── clap_derive v4.6.7 (proc-macro)
+│               ├── proc-macro2 feature "default" (*)
+│               ├── quote feature "default" (*)
+│               ├── syn feature "default" (*)
+│               ├── syn feature "full"
+│               │   └── syn v3.0.5 (*)
+│               └── heck feature "default"
+│                   └── heck v0.5.0
+├── clap feature "error-context"
+│   ├── clap v4.6.7 (*)
+│   └── clap_builder feature "error-context"
+│       └── clap_builder v4.6.7 (*)
+├── clap feature "help"
+│   ├── clap v4.6.7 (*)
+│   └── clap_builder feature "help"
+│       └── clap_builder v4.6.7 (*)
+├── clap feature "std"
+│   ├── clap v4.6.7 (*)
+│   └── clap_builder feature "std"
+│       ├── clap_builder v4.6.7 (*)
+│       └── anstyle feature "std" (*)
+└── clap feature "usage"
+    ├── clap v4.6.7 (*)
+    └── clap_builder feature "usage"
+        └── clap_builder v4.6.7 (*)
+
+xtask v0.1.0 (/home/s4mpl3bi4s/cyra/crates/xtask)
+├── cyra-core feature "default" (command-line) (*)
+└── serde_json feature "default" (*)

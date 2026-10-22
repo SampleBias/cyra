@@ -1,0 +1,65 @@
+{
+  "$defs": {
+    "Identifier": {
+      "maxLength": 128,
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9_.:-]+$",
+      "type": "string"
+    },
+    "Operation": {
+      "enum": [
+        "version",
+        "capabilities",
+        "schema",
+        "init",
+        "import",
+        "graph.inspect",
+        "graph.validate",
+        "graph.identify",
+        "observe",
+        "simulate",
+        "intervene",
+        "counterfactual",
+        "explain",
+        "provenance",
+        "reproduce",
+        "route",
+        "reason",
+        "model.propose",
+        "model.review",
+        "model.approve",
+        "fit",
+        "evaluate"
+      ],
+      "type": "string"
+    },
+    "ProtocolVersion": {
+      "enum": [
+        "vmcell.protocol.v1"
+      ],
+      "type": "string"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "arguments": true,
+    "id": {
+      "$ref": "#/$defs/Identifier"
+    },
+    "operation": {
+      "$ref": "#/$defs/Operation"
+    },
+    "schema_version": {
+      "$ref": "#/$defs/ProtocolVersion"
+    }
+  },
+  "required": [
+    "schema_version",
+    "id",
+    "operation",
+    "arguments"
+  ],
+  "title": "Request",
+  "type": "object"
+}

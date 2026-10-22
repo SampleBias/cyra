@@ -1,0 +1,3 @@
+{"schema_version":"vmcell.protocol.v1","id":"version-1","operation":"version","arguments":{}}
+malformed JSON
+{"schema_version":"vmcell.protocol.v1","id":"cf-1","operation":"counterfactual","arguments":{}}

@@ -1,0 +1,17 @@
+{
+  "below_detection_censor_limit": "0.8",
+  "benchmark_plan_included": false,
+  "converted_il6_pg_per_ml": "1250",
+  "deduplicated_count": 1,
+  "measurement_count": 10,
+  "not_measured_value": null,
+  "parquet_equals_zarr": true,
+  "physiological_validation": "not_performed",
+  "quarantined_count": 1,
+  "trailing_zero_examples": {
+    "0.80": "0.8",
+    "10.50": "10.5",
+    "3.250": "3.25"
+  },
+  "zero_value": "0"
+}

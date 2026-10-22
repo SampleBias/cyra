@@ -1,0 +1,11 @@
+total 40
+lrwxrwxrwx 1 s4mpl3bi4s s4mpl3bi4s 11 Oct 22 08:41 ar -> /usr/bin/ar
+lrwxrwxrwx 1 s4mpl3bi4s s4mpl3bi4s 11 Oct 22 08:41 as -> /usr/bin/as
+lrwxrwxrwx 1 s4mpl3bi4s s4mpl3bi4s 14 Oct 22 08:41 cargo -> /usr/bin/cargo
+lrwxrwxrwx 1 s4mpl3bi4s s4mpl3bi4s 11 Oct 22 08:41 cc -> /usr/bin/cc
+lrwxrwxrwx 1 s4mpl3bi4s s4mpl3bi4s 12 Oct 22 08:41 gcc -> /usr/bin/gcc
+lrwxrwxrwx 1 s4mpl3bi4s s4mpl3bi4s 11 Oct 22 08:41 ld -> /usr/bin/ld
+lrwxrwxrwx 1 s4mpl3bi4s s4mpl3bi4s 15 Oct 22 08:41 ranlib -> /usr/bin/ranlib
+lrwxrwxrwx 1 s4mpl3bi4s s4mpl3bi4s 14 Oct 22 08:41 rustc -> /usr/bin/rustc
+lrwxrwxrwx 1 s4mpl3bi4s s4mpl3bi4s 15 Oct 22 08:41 rustup -> /usr/bin/rustup
+lrwxrwxrwx 1 s4mpl3bi4s s4mpl3bi4s 14 Oct 22 08:41 strip -> /usr/bin/strip

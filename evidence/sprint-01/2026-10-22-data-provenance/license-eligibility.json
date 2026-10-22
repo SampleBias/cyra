@@ -1,0 +1,29 @@
+{
+  "approved_external_datasets": [],
+  "decisions": [
+    {
+      "benchmark_plan_included": false,
+      "case": "unknown",
+      "eligibility": "quarantined",
+      "exit_code": 5
+    },
+    {
+      "benchmark_plan_included": false,
+      "case": "restricted",
+      "eligibility": "ineligible",
+      "exit_code": 5
+    },
+    {
+      "benchmark_plan_included": false,
+      "case": "accession",
+      "eligibility": "ineligible",
+      "exit_code": 5
+    },
+    {
+      "benchmark_plan_included": true,
+      "case": "declared_experimental_public_domain_gate",
+      "exit_code": 0,
+      "note": "Synthetic rows used only to exercise the rights gate. Not an approved biological dataset."
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "$defs": {
+    "Modality": {
+      "enum": [
+        "transcript",
+        "intracellular_protein",
+        "secreted_protein",
+        "metabolite",
+        "functional_assay"
+      ],
+      "type": "string"
+    },
+    "ObservationKind": {
+      "enum": [
+        "measurement_retrieval",
+        "association_estimand"
+      ],
+      "type": "string"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "analyte_ids": {
+      "items": {
+        "type": "string"
+      },
+      "type": [
+        "array",
+        "null"
+      ]
+    },
+    "include_missing": {
+      "type": "boolean"
+    },
+    "kind": {
+      "$ref": "#/$defs/ObservationKind"
+    },
+    "modalities": {
+      "items": {
+        "$ref": "#/$defs/Modality"
+      },
+      "type": [
+        "array",
+        "null"
+      ]
+    },
+    "sample_ids": {
+      "items": {
+        "type": "string"
+      },
+      "type": [
+        "array",
+        "null"
+      ]
+    },
+    "schema_version": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "kind",
+    "include_missing"
+  ],
+  "title": "ObservationRequest",
+  "type": "object"
+}

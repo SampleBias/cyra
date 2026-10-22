@@ -1,0 +1,488 @@
+{
+  "$defs": {
+    "Accession": {
+      "additionalProperties": false,
+      "properties": {
+        "note": {
+          "type": "string"
+        },
+        "required": {
+          "type": "boolean"
+        },
+        "value": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "required",
+        "note"
+      ],
+      "type": "object"
+    },
+    "BenchmarkPlan": {
+      "additionalProperties": false,
+      "properties": {
+        "included": {
+          "type": "boolean"
+        },
+        "reasons": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "included",
+        "reasons"
+      ],
+      "type": "object"
+    },
+    "Eligibility": {
+      "enum": [
+        "eligible",
+        "quarantined",
+        "ineligible"
+      ],
+      "type": "string"
+    },
+    "FileDigest": {
+      "additionalProperties": false,
+      "properties": {
+        "path": {
+          "type": "string"
+        },
+        "sha256": {
+          "type": "string"
+        },
+        "size_bytes": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "path",
+        "sha256",
+        "size_bytes"
+      ],
+      "type": "object"
+    },
+    "IntendedUse": {
+      "enum": [
+        "pipeline_validation",
+        "independent_benchmark",
+        "method_development",
+        "not_applicable"
+      ],
+      "type": "string"
+    },
+    "LicenseDomain": {
+      "enum": [
+        "dataset",
+        "code",
+        "model_weight"
+      ],
+      "type": "string"
+    },
+    "LicenseRecord": {
+      "additionalProperties": false,
+      "properties": {
+        "domain": {
+          "$ref": "#/$defs/LicenseDomain"
+        },
+        "intended_use": {
+          "$ref": "#/$defs/IntendedUse"
+        },
+        "note": {
+          "type": "string"
+        },
+        "rights_basis": {
+          "$ref": "#/$defs/RightsBasis"
+        },
+        "spdx": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "domain",
+        "rights_basis",
+        "intended_use",
+        "note"
+      ],
+      "type": "object"
+    },
+    "Origin": {
+      "enum": [
+        "experimental",
+        "synthetic_fixture",
+        "simulated",
+        "literature_pointer"
+      ],
+      "type": "string"
+    },
+    "ReplicateRole": {
+      "enum": [
+        "primary",
+        "technical",
+        "repeated_sample"
+      ],
+      "type": "string"
+    },
+    "Representation": {
+      "additionalProperties": false,
+      "properties": {
+        "binary_float": {
+          "type": "string"
+        },
+        "numeric": {
+          "type": "string"
+        },
+        "tolerance": {
+          "type": "string"
+        },
+        "trailing_fractional_zeros": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "numeric",
+        "trailing_fractional_zeros",
+        "binary_float",
+        "tolerance"
+      ],
+      "type": "object"
+    },
+    "RightsBasis": {
+      "enum": [
+        "synthetic_fixture_authorization",
+        "public_domain",
+        "permissive_reuse",
+        "restricted",
+        "unknown"
+      ],
+      "type": "string"
+    },
+    "SampleRecord": {
+      "additionalProperties": false,
+      "properties": {
+        "cell_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "culture_batch": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "donor_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "experimental_batch": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "included_in_measurements": {
+          "type": "boolean"
+        },
+        "parent_sample_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "passage": {
+          "format": "uint32",
+          "minimum": 0,
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "perturbation": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "population_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "replicate_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "replicate_role": {
+          "$ref": "#/$defs/ReplicateRole"
+        },
+        "sample_id": {
+          "type": "string"
+        },
+        "source_identity": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "study_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "tissue": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "sample_id",
+        "replicate_role",
+        "included_in_measurements"
+      ],
+      "type": "object"
+    },
+    "SourceRecord": {
+      "additionalProperties": false,
+      "properties": {
+        "checksum_sha256": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "content_role": {
+          "type": "string"
+        },
+        "kind": {
+          "type": "string"
+        },
+        "source_id": {
+          "type": "string"
+        },
+        "uri": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "version": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_id",
+        "kind",
+        "version",
+        "content_role"
+      ],
+      "type": "object"
+    },
+    "StorageProfiles": {
+      "additionalProperties": false,
+      "properties": {
+        "parquet": {
+          "type": "string"
+        },
+        "parquet_compression": {
+          "type": "string"
+        },
+        "parquet_row_group_rows": {
+          "format": "uint",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "zarr": {
+          "type": "string"
+        },
+        "zarr_chunk_observations": {
+          "format": "uint",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "zarr_codecs": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "parquet",
+        "zarr",
+        "parquet_compression",
+        "zarr_codecs",
+        "parquet_row_group_rows",
+        "zarr_chunk_observations"
+      ],
+      "type": "object"
+    },
+    "TransformRecord": {
+      "additionalProperties": false,
+      "properties": {
+        "input_sha256": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "name": {
+          "type": "string"
+        },
+        "note": {
+          "type": "string"
+        },
+        "software": {
+          "type": "string"
+        },
+        "transform_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "transform_id",
+        "name",
+        "software",
+        "input_sha256",
+        "note"
+      ],
+      "type": "object"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "accession": {
+      "$ref": "#/$defs/Accession"
+    },
+    "benchmark_plan": {
+      "$ref": "#/$defs/BenchmarkPlan"
+    },
+    "dataset_id": {
+      "type": "string"
+    },
+    "deduplicated_count": {
+      "format": "uint",
+      "minimum": 0,
+      "type": "integer"
+    },
+    "eligibility": {
+      "$ref": "#/$defs/Eligibility"
+    },
+    "files": {
+      "items": {
+        "$ref": "#/$defs/FileDigest"
+      },
+      "type": "array"
+    },
+    "importer_revision": {
+      "type": "string"
+    },
+    "input_manifest_sha256": {
+      "type": "string"
+    },
+    "licenses": {
+      "items": {
+        "$ref": "#/$defs/LicenseRecord"
+      },
+      "type": "array"
+    },
+    "limitations": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "measurement_count": {
+      "format": "uint",
+      "minimum": 0,
+      "type": "integer"
+    },
+    "origin": {
+      "$ref": "#/$defs/Origin"
+    },
+    "quarantined_count": {
+      "format": "uint",
+      "minimum": 0,
+      "type": "integer"
+    },
+    "representation": {
+      "$ref": "#/$defs/Representation"
+    },
+    "samples": {
+      "items": {
+        "$ref": "#/$defs/SampleRecord"
+      },
+      "type": "array"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "sources": {
+      "items": {
+        "$ref": "#/$defs/SourceRecord"
+      },
+      "type": "array"
+    },
+    "storage_profiles": {
+      "$ref": "#/$defs/StorageProfiles"
+    },
+    "transforms": {
+      "items": {
+        "$ref": "#/$defs/TransformRecord"
+      },
+      "type": "array"
+    },
+    "unavailable_fields": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "schema_version",
+    "dataset_id",
+    "origin",
+    "eligibility",
+    "benchmark_plan",
+    "importer_revision",
+    "input_manifest_sha256",
+    "representation",
+    "storage_profiles",
+    "licenses",
+    "accession",
+    "sources",
+    "samples",
+    "transforms",
+    "measurement_count",
+    "quarantined_count",
+    "deduplicated_count",
+    "unavailable_fields",
+    "files",
+    "limitations"
+  ],
+  "title": "DatasetManifest",
+  "type": "object"
+}

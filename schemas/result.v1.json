@@ -1,0 +1,350 @@
+{
+  "$defs": {
+    "ArtifactReference": {
+      "additionalProperties": false,
+      "properties": {
+        "relative_path": {
+          "type": "string"
+        },
+        "sha256": {
+          "type": "string"
+        },
+        "size_bytes": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "sha256",
+        "size_bytes",
+        "relative_path"
+      ],
+      "type": "object"
+    },
+    "ErrorCode": {
+      "enum": [
+        "invalid_json",
+        "invalid_request",
+        "invalid_arguments",
+        "unknown_schema",
+        "duplicate_request_id",
+        "unsupported_operation",
+        "non_identifiable",
+        "ineligible_data",
+        "numerical_failure",
+        "request_too_large",
+        "session_limit",
+        "adapter_unavailable",
+        "io_failure",
+        "internal_failure"
+      ],
+      "type": "string"
+    },
+    "ErrorDetail": {
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "$ref": "#/$defs/ErrorCode"
+        },
+        "message": {
+          "type": "string"
+        },
+        "retryable": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "code",
+        "message",
+        "retryable"
+      ],
+      "type": "object"
+    },
+    "Execution": {
+      "additionalProperties": false,
+      "properties": {
+        "duration_ms": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "scientific_computation_performed": {
+          "type": "boolean"
+        },
+        "seed": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": [
+            "integer",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "scientific_computation_performed"
+      ],
+      "type": "object"
+    },
+    "Identification": {
+      "additionalProperties": false,
+      "properties": {
+        "reason": {
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/$defs/IdentificationStatus"
+        }
+      },
+      "required": [
+        "status",
+        "reason"
+      ],
+      "type": "object"
+    },
+    "IdentificationStatus": {
+      "enum": [
+        "identified",
+        "not_identifiable",
+        "unsupported",
+        "not_applicable"
+      ],
+      "type": "string"
+    },
+    "Identifier": {
+      "maxLength": 128,
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9_.:-]+$",
+      "type": "string"
+    },
+    "InferenceBasis": {
+      "enum": [
+        "observed_data",
+        "observational_identification",
+        "specified_scm"
+      ],
+      "type": "string"
+    },
+    "ProvenanceReference": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "source"
+      ],
+      "type": "object"
+    },
+    "QueryLevel": {
+      "enum": [
+        "association",
+        "intervention",
+        "counterfactual"
+      ],
+      "type": "string"
+    },
+    "ResultVersion": {
+      "enum": [
+        "vmcell.result.v1"
+      ],
+      "type": "string"
+    },
+    "ScientificContext": {
+      "additionalProperties": false,
+      "properties": {
+        "assumptions": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "basis": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/InferenceBasis"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "identification": {
+          "$ref": "#/$defs/Identification"
+        },
+        "model_hash": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "model_resolution": {
+          "type": "string"
+        },
+        "model_revision": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Identifier"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "provenance": {
+          "items": {
+            "$ref": "#/$defs/ProvenanceReference"
+          },
+          "type": "array"
+        },
+        "uncertainty": {
+          "$ref": "#/$defs/Uncertainty"
+        },
+        "validation_tier": {
+          "$ref": "#/$defs/ValidationTier"
+        }
+      },
+      "required": [
+        "model_resolution",
+        "identification",
+        "assumptions",
+        "uncertainty",
+        "validation_tier",
+        "provenance"
+      ],
+      "type": "object"
+    },
+    "Status": {
+      "enum": [
+        "success",
+        "invalid_input",
+        "unsupported",
+        "not_identifiable",
+        "data_error",
+        "numerical_failure",
+        "resource_limit",
+        "io_error",
+        "internal_error"
+      ],
+      "type": "string"
+    },
+    "Uncertainty": {
+      "additionalProperties": false,
+      "properties": {
+        "reason": {
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/$defs/UncertaintyStatus"
+        }
+      },
+      "required": [
+        "status",
+        "reason"
+      ],
+      "type": "object"
+    },
+    "UncertaintyStatus": {
+      "enum": [
+        "quantified",
+        "conditional_point",
+        "not_quantified",
+        "not_applicable",
+        "not_computed"
+      ],
+      "type": "string"
+    },
+    "ValidationTier": {
+      "enum": [
+        "unvalidated",
+        "synthetic_verified",
+        "internally_evaluated",
+        "independently_evaluated"
+      ],
+      "type": "string"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "artifacts": {
+      "items": {
+        "$ref": "#/$defs/ArtifactReference"
+      },
+      "type": "array"
+    },
+    "error": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ErrorDetail"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "execution": {
+      "$ref": "#/$defs/Execution"
+    },
+    "exit_code": {
+      "format": "uint8",
+      "maximum": 255,
+      "minimum": 0,
+      "type": "integer"
+    },
+    "id": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Identifier"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "query_level": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/QueryLevel"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "result": true,
+    "schema_version": {
+      "$ref": "#/$defs/ResultVersion"
+    },
+    "scientific_context": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ScientificContext"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "status": {
+      "$ref": "#/$defs/Status"
+    }
+  },
+  "required": [
+    "schema_version",
+    "status",
+    "exit_code",
+    "artifacts",
+    "execution"
+  ],
+  "title": "Response",
+  "type": "object"
+}

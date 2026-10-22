@@ -1,0 +1,12 @@
+{
+  "schema_version": "cyra.sprint-evidence.v1",
+  "sprint": "NN",
+  "kind": "template_not_execution_evidence",
+  "status": "not_executed",
+  "source_inventory_sha256": null,
+  "binary_sha256": null,
+  "lockfile_sha256": null,
+  "checks": [],
+  "independent_review": "pending",
+  "physiological_validation": "not_performed"
+}

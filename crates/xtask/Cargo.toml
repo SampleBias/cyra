@@ -1,0 +1,16 @@
+[package]
+name = "xtask"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license-file = "../../LICENSE"
+publish.workspace = true
+description = "Rust-only development checks and evidence collection for Cyra"
+
+[dependencies]
+cyra-core.workspace = true
+cyra-data.workspace = true
+serde_json.workspace = true
+
+[lints]
+workspace = true

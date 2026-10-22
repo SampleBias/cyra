@@ -1,0 +1,182 @@
+{
+  "$defs": {
+    "AnalyteMapping": {
+      "additionalProperties": false,
+      "properties": {
+        "modality": {
+          "$ref": "#/$defs/Modality"
+        },
+        "unit": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "modality",
+        "unit"
+      ],
+      "type": "object"
+    },
+    "ColumnMapping": {
+      "additionalProperties": false,
+      "properties": {
+        "analyte_id": {
+          "type": "string"
+        },
+        "assay_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "censor_limit": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "compartment": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "missing_reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "modality": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "protocol_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "qc_failure": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "sample_id": {
+          "type": "string"
+        },
+        "time_amount": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "time_origin": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "time_unit": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "unit": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "value": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "sample_id",
+        "analyte_id",
+        "value"
+      ],
+      "type": "object"
+    },
+    "Modality": {
+      "enum": [
+        "transcript",
+        "intracellular_protein",
+        "secreted_protein",
+        "metabolite",
+        "functional_assay"
+      ],
+      "type": "string"
+    },
+    "TableFormat": {
+      "enum": [
+        "csv",
+        "tsv",
+        "json"
+      ],
+      "type": "string"
+    },
+    "UnitConversion": {
+      "additionalProperties": false,
+      "properties": {
+        "analyte_id": {
+          "type": "string"
+        },
+        "factor": {
+          "type": "string"
+        },
+        "from_unit": {
+          "type": "string"
+        },
+        "to_unit": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "analyte_id",
+        "from_unit",
+        "to_unit",
+        "factor"
+      ],
+      "type": "object"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "analytes": {
+      "additionalProperties": {
+        "$ref": "#/$defs/AnalyteMapping"
+      },
+      "type": "object"
+    },
+    "columns": {
+      "$ref": "#/$defs/ColumnMapping"
+    },
+    "conversions": {
+      "items": {
+        "$ref": "#/$defs/UnitConversion"
+      },
+      "type": "array"
+    },
+    "format": {
+      "$ref": "#/$defs/TableFormat"
+    },
+    "schema_version": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "format",
+    "columns",
+    "analytes",
+    "conversions"
+  ],
+  "title": "ImportMapping",
+  "type": "object"
+}

@@ -1,0 +1,4 @@
+Script started on 2026-10-22 08:43:07-07:00 [COMMAND="./target/release/vmcell --format json version" <not executed on terminal>]
+{"schema_version":"vmcell.result.v1","id":null,"status":"success","exit_code":0,"query_level":null,"result":{"build_profile":"release","cli":"vmcell","expansion":"Cybernetic Cellular Intelligence","features":[],"pinned_toolchain":"1.97.1","project":"Cyra","protocol":"vmcell.protocol.v1","result_schema":"vmcell.result.v1","scientific_validation":"unvalidated","stage":"sprint_00_foundation","target":"x86_64-unknown-linux-gnu","toolchain":"rustc 1.97.1 (8bab26f4f 2026-07-14)","version":"0.1.0"},"error":null,"scientific_context":null,"artifacts":[],"execution":{"seed":null,"duration_ms":null,"scientific_computation_performed":false}}
+
+Script done on 2026-10-22 08:43:07-07:00 [COMMAND_EXIT_CODE="0"]

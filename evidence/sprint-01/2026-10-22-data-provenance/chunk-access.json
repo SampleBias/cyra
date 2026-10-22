@@ -1,0 +1,21 @@
+{
+  "bytes_read": 3296,
+  "chunks_opened": [
+    "censor_flag/0",
+    "censor_limit/0.0",
+    "censor_limit_len/0",
+    "missing_reason/0",
+    "presence/0",
+    "value/0.0",
+    "value_len/0"
+  ],
+  "missing_chunk": "Zarr chunk 'value/1.0' is absent. Absent chunks are not interpreted as measured zeros.",
+  "one_chunk_working_set_bytes": 3296,
+  "rows": 200,
+  "same_chunk_second_row_added_no_bytes": true,
+  "short_chunk": "Zarr value chunk is shorter than the requested observation. It was not padded with a zero measurement.",
+  "slice": [
+    5,
+    7
+  ]
+}

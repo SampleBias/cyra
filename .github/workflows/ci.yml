@@ -1,0 +1,29 @@
+name: Rust foundation
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - name: Checkout pinned source action
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Install pinned Rust toolchain
+        run: rustup toolchain install 1.97.1 --profile minimal --component rustfmt --component clippy
+      - name: Prepare dependency cache
+        run: cargo fetch --locked
+      - name: Formatting
+        run: cargo fmt --all --check
+      - name: Lint
+        run: cargo clippy --workspace --all-targets --offline --locked -- -D warnings
+      - name: Tests and schema compatibility
+        run: cargo test --workspace --offline --locked
+      - name: Dependency and license policy
+        run: cargo run --offline --locked -p xtask -- audit
+      - name: Release build
+        run: cargo build --workspace --release --offline --locked
+      - name: Isolated offline evidence
+        run: unshare --user --map-root-user --net ./target/release/xtask evidence evidence/sprint-00/ci-${{ github.run_id }}-${{ github.run_attempt }}

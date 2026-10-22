@@ -1,0 +1,141 @@
+{
+  "$defs": {
+    "FiniteValue": {
+      "format": "double",
+      "type": "number"
+    },
+    "Identifier": {
+      "maxLength": 128,
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9_.:-]+$",
+      "type": "string"
+    },
+    "InferenceBasis": {
+      "enum": [
+        "observed_data",
+        "observational_identification",
+        "specified_scm"
+      ],
+      "type": "string"
+    },
+    "QueryScope": {
+      "additionalProperties": false,
+      "properties": {
+        "model_revision": {
+          "$ref": "#/$defs/Identifier"
+        },
+        "outcome": {
+          "$ref": "#/$defs/Identifier"
+        },
+        "population": {
+          "$ref": "#/$defs/Identifier"
+        }
+      },
+      "required": [
+        "model_revision",
+        "population",
+        "outcome"
+      ],
+      "type": "object"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "oneOf": [
+    {
+      "additionalProperties": false,
+      "properties": {
+        "given": {
+          "additionalProperties": false,
+          "patternProperties": {
+            "^[A-Za-z0-9_.:-]+$": {
+              "$ref": "#/$defs/FiniteValue"
+            }
+          },
+          "type": "object"
+        },
+        "level": {
+          "const": "association",
+          "type": "string"
+        },
+        "scope": {
+          "$ref": "#/$defs/QueryScope"
+        }
+      },
+      "required": [
+        "level",
+        "scope",
+        "given"
+      ],
+      "type": "object"
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "basis": {
+          "$ref": "#/$defs/InferenceBasis"
+        },
+        "interventions": {
+          "additionalProperties": false,
+          "patternProperties": {
+            "^[A-Za-z0-9_.:-]+$": {
+              "$ref": "#/$defs/FiniteValue"
+            }
+          },
+          "type": "object"
+        },
+        "level": {
+          "const": "intervention",
+          "type": "string"
+        },
+        "scope": {
+          "$ref": "#/$defs/QueryScope"
+        }
+      },
+      "required": [
+        "level",
+        "scope",
+        "basis",
+        "interventions"
+      ],
+      "type": "object"
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "evidence": {
+          "additionalProperties": false,
+          "patternProperties": {
+            "^[A-Za-z0-9_.:-]+$": {
+              "$ref": "#/$defs/FiniteValue"
+            }
+          },
+          "type": "object"
+        },
+        "interventions": {
+          "additionalProperties": false,
+          "patternProperties": {
+            "^[A-Za-z0-9_.:-]+$": {
+              "$ref": "#/$defs/FiniteValue"
+            }
+          },
+          "type": "object"
+        },
+        "level": {
+          "const": "counterfactual",
+          "type": "string"
+        },
+        "scope": {
+          "$ref": "#/$defs/QueryScope"
+        }
+      },
+      "required": [
+        "level",
+        "scope",
+        "evidence",
+        "interventions"
+      ],
+      "type": "object"
+    }
+  ],
+  "title": "ScientificQuery"
+}

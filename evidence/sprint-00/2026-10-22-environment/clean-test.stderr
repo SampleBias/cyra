@@ -1,0 +1,58 @@
+   Compiling proc-macro2 v1.0.107
+   Compiling unicode-ident v1.0.24
+   Compiling quote v1.0.47
+   Compiling version_check v0.9.5
+   Compiling serde_core v1.0.229
+   Compiling typenum v1.20.1
+   Compiling zmij v1.0.23
+   Compiling serde_json v1.0.151
+   Compiling ref-cast v1.0.27
+   Compiling cfg-if v1.0.5
+   Compiling serde v1.0.229
+   Compiling rustix v1.1.4
+   Compiling bitflags v2.13.2
+   Compiling memchr v2.8.3
+   Compiling itoa v1.0.18
+   Compiling linux-raw-sys v0.12.1
+   Compiling cpufeatures v0.2.17
+   Compiling cyra-core v0.1.0 (/home/s4mpl3bi4s/cyra/.build/clean-source/crates/cyra-core)
+   Compiling dyn-clone v1.0.20
+   Compiling libc v0.2.189
+   Compiling generic-array v0.14.7
+   Compiling getrandom v0.4.3
+   Compiling once_cell v1.21.4
+   Compiling anstyle v1.0.14
+   Compiling heck v0.5.0
+   Compiling clap_lex v1.1.1
+   Compiling fastrand v2.5.0
+   Compiling clap_builder v4.6.7
+   Compiling syn v3.0.5
+   Compiling block-buffer v0.10.4
+   Compiling crypto-common v0.1.7
+   Compiling digest v0.10.7
+   Compiling sha2 v0.10.9
+   Compiling tempfile v3.27.0
+   Compiling serde_derive_internals v0.30.0
+   Compiling serde_derive v1.0.229
+   Compiling ref-cast-impl v1.0.27
+   Compiling clap_derive v4.6.7
+   Compiling schemars_derive v1.2.2
+   Compiling clap v4.6.7
+   Compiling schemars v1.2.2
+   Compiling vmcell v0.1.0 (/home/s4mpl3bi4s/cyra/.build/clean-source/crates/vmcell)
+   Compiling xtask v0.1.0 (/home/s4mpl3bi4s/cyra/.build/clean-source/crates/xtask)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 8.75s
+     Running unittests src/lib.rs (.build/clean-source/target/debug/deps/cyra_core-ca3b87c02576e04a)
+     Running tests/artifacts.rs (.build/clean-source/target/debug/deps/artifacts-ae234f19c2fae502)
+     Running tests/protocol.rs (.build/clean-source/target/debug/deps/protocol-0245f4bd933c6ee9)
+     Running unittests src/main.rs (.build/clean-source/target/debug/deps/vmcell-d909e9de6a248798)
+     Running tests/cli.rs (.build/clean-source/target/debug/deps/cli-702dfa39a29a4c18)
+     Running unittests src/main.rs (.build/clean-source/target/debug/deps/xtask-695703b0550fe1ec)
+   Doc-tests cyra_core
+error: doctest failed, to rerun pass `-p cyra-core --doc`
+
+Caused by:
+  could not execute process `rustdoc --edition=2024 --crate-type lib --color auto --crate-name cyra_core --test crates/cyra-core/src/lib.rs --test-run-directory /home/s4mpl3bi4s/cyra/.build/clean-source/crates/cyra-core --forbid=unsafe_code '--warn=clippy::all' --extern cyra_core=/home/s4mpl3bi4s/cyra/.build/clean-source/target/debug/deps/libcyra_core-55dbb56f846a93d0.rlib --extern rustix=/home/s4mpl3bi4s/cyra/.build/clean-source/target/debug/deps/librustix-40f30f5ee05d367f.rlib --extern schemars=/home/s4mpl3bi4s/cyra/.build/clean-source/target/debug/deps/libschemars-6d117b913cd6a9ae.rlib --extern serde=/home/s4mpl3bi4s/cyra/.build/clean-source/target/debug/deps/libserde-a0f58344c6286cc4.rlib --extern serde_json=/home/s4mpl3bi4s/cyra/.build/clean-source/target/debug/deps/libserde_json-4137cf488d9518a8.rlib --extern sha2=/home/s4mpl3bi4s/cyra/.build/clean-source/target/debug/deps/libsha2-5b2ea3a0544d0904.rlib --extern tempfile=/home/s4mpl3bi4s/cyra/.build/clean-source/target/debug/deps/libtempfile-6e21a97dfa5df0d6.rlib -L dependency=/home/s4mpl3bi4s/cyra/.build/clean-source/target/debug/deps -C embed-bitcode=no --check-cfg 'cfg(docsrs,test)' --check-cfg 'cfg(feature, values())' --error-format human` (never executed)
+
+Caused by:
+  No such file or directory (os error 2)

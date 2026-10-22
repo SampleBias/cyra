@@ -1,0 +1,8 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.09s
+     Running unittests src/lib.rs (target/debug/deps/cyra_core-ca3b87c02576e04a)
+     Running tests/artifacts.rs (target/debug/deps/artifacts-ae234f19c2fae502)
+     Running tests/protocol.rs (target/debug/deps/protocol-0245f4bd933c6ee9)
+     Running unittests src/main.rs (target/debug/deps/vmcell-d909e9de6a248798)
+     Running tests/cli.rs (target/debug/deps/cli-702dfa39a29a4c18)
+     Running unittests src/main.rs (target/debug/deps/xtask-695703b0550fe1ec)
+   Doc-tests cyra_core

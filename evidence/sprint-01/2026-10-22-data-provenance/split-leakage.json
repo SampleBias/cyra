@@ -1,0 +1,8 @@
+{
+  "algorithm": "sha256-mod-1000000 of cyra.donor-split.v1, seed and donor id",
+  "overlapping_source_assignments": [],
+  "seed": 11,
+  "stable_across_imports": true,
+  "technical_and_repeated_samples_share_donor_split": true,
+  "unknown_donor_blocks_holdout": true
+}
